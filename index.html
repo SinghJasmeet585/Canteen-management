@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>PLL Canteen Management System : Service Providers - Coupon Generation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  
+  <link rel='stylesheet prefetch' href='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc3/angular-material.css'>
+<link rel='stylesheet prefetch' href='http://localhost:8080/docs.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="/media/jasmeet/8A584B5E584B47E1/html/material-design-sign-up-form/css/header.css">
+   
+   <style>
+   	.button {
+    background-color:#27780A;	
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button1	 {
+    background-color: #7896EC;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.header {
+	text-align: center;
+	font-size: 70px;
+	background-color: white;
+	letter-spacing: 20px;
+	}
+   </style>
+  
+</head>
+
+<body>
+	<div>
+<header style="height: 50px">
+         <div class="stage">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
+
+	</header></div><br><br><br><br><br>
+<div  style="background-color: #5c85d6">
+  <div ng-controller="DemoCtrl" ng-cloak="" class="md-inline-form" ng-app="MyApp" layout="column" layout-sm="row" layout-align="center center" layout-align-sm="start start" layout-fill>
+<!--  	<div style="margin-left: 90%; margin-top:0 ;font-size: 20px">
+  	<p><b>total value</b></p>
+  </div>  -->
+		<md-content id="SignupContent" class="md-whiteframe-10dp" flex-sm>
+				<md-toolbar flex id="materialToolbar">
+						<div class="md-toolbar-tools"> <span flex=""></span> <span class="md-headline" align="center">PLL Canteen Management System : Service Providers - Coupon Generation</span> <span flex=""></span> </div>
+				</md-toolbar>
+				<div layout-padding="">
+						<div></div>
+						<form name="userForm" method="POST" action="" ng-submit="user.submit(userForm.$valid)" enctype="multipart/form-data">
+								<input type="hidden" name="action" value="signup" />
+								<div layout="row" layout-sm="column">
+										<md-input-container flex-gt-sm="">
+												<label>Employee No.</label>
+												<input ng-model="user.employeenumber" name="employee_number" required type="number" ng-pattern="/^[0-9]{1,7}$/" placeholder="Employee No">
+												<div ng-if="userForm.employee_number.$dirty" ng-messages="userForm.employee_number.$error" role="alert">
+														<div ng-message="required" class="my-message">Employee Number is Required.</div>
+														<div ng-message="pattern" class="my-message">Enter correct Employee Number.</div>
+												</div>
+										</md-input-container>
+										<md-input-container flex-gt-sm="">
+												<label>Employee Name</label>
+												<input ng-model="user.employee_name" name="employee_name" required type="text" ng-pattern="/^[a-zA-Z'. -]+$/" placeholder="Employee Name">
+												<div ng-if="userForm.employee_name.$dirty" ng-messages="userForm.employee_name.$error" role="alert">
+														<div ng-message="required" class="my-message">Employee Name is Required.</div>
+														<div ng-message="pattern" class="my-message">Enter correct Employee Name.</div>
+												</div>
+										</md-input-container>
+								</div>
+								<div layout="row" layout-sm="column">
+										<p style="font-size: 12px; margin-left: 3px; margin-top: 18px;">Request for: </p>
+										<input type="hidden" name="request_for" value="{{user.request_for}}" />
+										<md-radio-group style="margin: 12px 0 19px;" ng-model="user.request_for" required>
+												<md-radio-button value="Self" class="md-primary">Self</md-radio-button>
+												<md-radio-button value="guest">Guest</md-radio-button>
+												<md-radio-button value="colleague">Colleague</md-radio-button>
+										</md-radio-group>
+										 
+								</div>
+								<div layout="row" layout-sm="column">
+										<md-input-container flex-gt-sm="">
+												<p>Item</p>
+											<div>	<select id="item" name="item" style="width: 300px" class="button1">
+
+													<option value="">Select ...</option>
+                            <option value='3'>Cold Drink (Nescafe Tetra Pack or Amul Kool Cafe Can or Amul Kool Shake Soya Milk ) </option><option value='12'>Lemon Rice With Coconut Chutney </option><option value='19'>MTR Vegetable Upma </option><option value='31'>Bread Pakoda </option><option value='32'>ACT 2 Cheese & Herbs </option><option value='35'>Amul Spiced Buttermilk </option><option value='60'>Amul Butter (01 Piece) </option><option value='59'>Brown Bread or Multi Grain Bread 1 Piece Each) </option><option value='61'>Fresh Kashmir Apple (01 Piece) </option><option value='75'>Cookies From Bangali Sweet </option><option value='91'>Amul Kool Milk </option><option value='129'>Fresh Raw Coconut Water </option><option value='143'>Biscut @25 </option><option value='152'>Red Grapes </option><option value='155'>Hershey's Milk Shake </option><option value='157'>Catch Soft  Drink or Aquarius Gluco Charge Tetra Pack 200ml </option><option value='159'>Maggi Masala Cuppa Noodles </option><option value='161'>Saffola Masala Cuppa Oats </option><option value='162'>Funduz Soft Drink </option><option value='169'>Jamun Box </option><option value='176'>Lychee </option><option value='183'>Plum </option> 
+
+												</select>
+											</div>
+												<div ng-if="userForm.Item.$dirty" ng-messages="userForm.Item.$error" role="alert">
+														<div ng-message="required" class="my-message">Item is Required.</div>
+												</div>
+										</md-input-container>
+								</div>  
+								<md-input-container flex-gt-sm="">
+												<label>Available Quantity</label>
+												<input required type="number" step="any" name="quantity" ng-model="user.quantity" min="13" max="100" placeholder="value" style="width: 300px" />
+												<div ng-if="userForm.quantity.$dirty" ng-messages="userForm.quantity.$error" role="alert" multiple>
+														<div ng-message="required">Quantity is Required.</div>
+												<!--		<div ng-message="min">Only Above 13 years Old are allowed.</div>      -->				
+														<div ng-message="max">Sorry {{userForm.quantity.$viewValue}} Quantity not available.</div>
+												</div> 
+										</md-input-container>  
+
+								<div>
+										<p style="font-size: 12px; margin-left: 3px; margin-top: 18px;">Requested Quantity: </p>
+										<input type="hidden" name="request" value="{{user.request}}" />
+										<md-radio-group style="margin: 12px 0 19px;" ng-model="user.request" required>
+												<md-radio-button value="1" class="md-primary">one</md-radio-button>
+												<md-radio-button value="2">Two</md-radio-button>
+												<md-radio-button value="3">Three</md-radio-button>
+												<md-radio-button value="4">four</md-radio-button>
+												<md-radio-button value="5">Five</md-radio-button>
+										</md-radio-group>
+										 
+								</div>
+									
+									<p></p>
+									<br>
+								<div layout="row" layout-sm="column">
+										<md-input-container flex-gt-sm="">
+												<label>Value for Quantity</label>
+												<input ng-model="user.value" name="Value" required type="number" ng-pattern="/^[0-9]{1,7}$/" placeholder="Price">
+												<div ng-if="userForm.value.$dirty" ng-messages="userForm.value.$error" role="alert">
+														<div ng-message="required" class="my-message">Value for Quantity is Required.</div>
+														<div ng-message="pattern" class="my-message">Enter correct Value</div>
+												</div>
+										</md-input-container>
+								</div>
+								<md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="userForm.$invalid" name="submit">Generate</md-button>
+
+								<br><br>
+
+								<div class="col-md-6 col-xs-12">
+							<label>Total consumed value for June : </label> _____ (INR)							
+					       <button type="button" class="button1"> Get Details</button>
+						</div>
+
+						</form>
+				</div>
+		</md-content>
+</div>
+
+    <div>	
+	     <footer style="font-size: 20px; height: 70px; padding: 20px">
+	     	<label></label>
+	           <button class="button">Log Out</button>
+         </footer>
+    </div>
+ 
+</div>
+
+ 	 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-messages.min.js'></script>
+<script src='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc3/angular-material.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
